@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zz.hujing.baseboot.mapper.PhoneMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="zz.hujing.baseboot.domain.Phone">
+        <id column="phone_id" property="phoneId" />
+        <result column="phone_phone" property="phonePhone" />
+        <result column="phone_code" property="phoneCode" />
+        <result column="phone_time" property="phoneTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        phone_id, phone_phone, phone_code, phone_time
+    </sql>
+
+</mapper>

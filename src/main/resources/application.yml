@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    dynamic:
+      # 多数据源的配置
+      master:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: hujing19960825
+        username: hujing
+        url: jdbc:mysql://localhost:3307/business_oa?characterEncoding=UTF-8&useSSL=false&serverTimeZone=Hongkong&autoReconnect=true&allowMultiQueries=true
+        type: com.zaxxer.hikari.HikariDataSource
+      slaver:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: hujing19960825
+        username: hujing
+        url: jdbc:mysql://localhost:3307/oa?characterEncoding=UTF-8&useSSL=false&serverTimeZone=Hongkong&autoReconnect=true&allowMultiQueries=true
+        type: com.zaxxer.hikari.HikariDataSource
+  application:
+    name: base-boot
+  redis:
+    host: localhost
+    password: bdth-redis@2019
+    port: 16379
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        exclude: ['shutdown']
+  endpoint:
+    health:
+      show-details: always

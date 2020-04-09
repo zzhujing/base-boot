@@ -1,0 +1,10 @@
+### 基于SpringBoot的脚手架工程
+- 基本的通用返回值 [√]
+- 全局异常返回 [√]
+- mybatis-plus整合 [√]
+- 参数校验 [√]
+- redis的相关配置 [√]
+- HttpClient整合连接池配置 [√]
+- 通用日志logback+Slf4j [√]
+- SpringContext依赖查找工具 [√]
+- 简陋版多数据源 [√]
