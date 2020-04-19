@@ -30,8 +30,7 @@ public class PhoneController {
 
     @PostMapping("/add")
     @DynamicDS(DynamicDataSourceContext.DataSourceType.SLAVER)
-    public CommonResult add(@RequestBody Phone phone) {
-         return phoneService.save(phone)?CommonResult.success(): CommonResult.fail();
+    protected CommonResult<Void> add(@RequestBody Phone phone) {
+        return phoneService.save(phone) ? CommonResult.success() : CommonResult.fail();
     }
-
 }

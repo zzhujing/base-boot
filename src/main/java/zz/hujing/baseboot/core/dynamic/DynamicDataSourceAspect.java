@@ -5,6 +5,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Component;
  **/
 @Aspect
 @Component
+@ConditionalOnProperty(prefix = "base.boot", name = "system", havingValue = "true")
 public class DynamicDataSourceAspect {
 
     @Pointcut("execution(* zz.hujing.baseboot.controller..*.*(..))")

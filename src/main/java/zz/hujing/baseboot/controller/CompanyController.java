@@ -27,7 +27,7 @@ public class CompanyController {
     private CompanyService companyService;
 
     @PostMapping("/add")
-    public CommonResult add(@RequestBody Company company) {
+    public CommonResult<Void> add(@RequestBody Company company) {
         return companyService.save(company) ? CommonResult.success() : CommonResult.fail();
     }
 

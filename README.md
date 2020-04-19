@@ -7,4 +7,4 @@
 - HttpClient整合连接池配置 [√]
 - 通用日志logback+Slf4j [√]
 - SpringContext依赖查找工具 [√]
-- 简陋版多数据源 [√]
+- 简陋版多数据源,支持application.yml属性控制开关 [√]

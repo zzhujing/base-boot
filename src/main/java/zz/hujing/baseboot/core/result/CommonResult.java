@@ -18,7 +18,7 @@ import static zz.hujing.baseboot.core.result.CommonEnum.FORBIDDEN;
 @Data
 @AllArgsConstructor
 @Builder
-public class CommonResult implements Serializable {
+public class CommonResult<T> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -31,7 +31,7 @@ public class CommonResult implements Serializable {
     /**
      * 分页数据相关
      */
-    private Object data;
+    private T data;
 
     @JsonInclude(NON_NULL) //为null时不序列化该字段
     private Long total;
@@ -44,31 +44,31 @@ public class CommonResult implements Serializable {
     private String message;
 
 
-    public static CommonResult success(Object data) {
-        return CommonResult.builder()
+    public static <T> CommonResult<T> success(T data) {
+        return CommonResult.<T>builder()
                 .data(data)
                 .code(CommonEnum.SUCCESS.code())
                 .message(CommonEnum.SUCCESS.tip())
                 .build();
     }
 
-    public static CommonResult success() {
-        return CommonResult.builder()
+    public static <T> CommonResult<T> success() {
+        return CommonResult.<T>builder()
                 .code(CommonEnum.SUCCESS.code())
                 .message(CommonEnum.SUCCESS.tip())
                 .build();
     }
 
 
-    public static CommonResult fail() {
-        return CommonResult.builder()
+    public static <T> CommonResult<T> fail() {
+        return CommonResult.<T>builder()
                 .code(CommonEnum.FAIL.code())
                 .message(CommonEnum.FAIL.tip())
                 .build();
     }
 
-    public static CommonResult fail(String message) {
-        return CommonResult.builder()
+    public static <T> CommonResult<T> fail(String message) {
+        return CommonResult.<T>builder()
                 .data(null)
                 .code(CommonEnum.FAIL.code())
                 .message(message)
@@ -81,15 +81,15 @@ public class CommonResult implements Serializable {
      * @param resultCode 公共枚举
      * @return CommonResult
      */
-    public static CommonResult fail(ResultCode resultCode) {
-        return CommonResult.builder()
+    public static <T> CommonResult<T>  fail(ResultCode resultCode) {
+        return CommonResult.<T>builder()
                 .code(resultCode.code())
                 .message(resultCode.tip())
                 .build();
     }
 
-    public static CommonResult forbidden() {
-        return CommonResult.builder()
+    public static <T> CommonResult<T> forbidden() {
+        return CommonResult.<T>builder()
                 .code(FORBIDDEN.code())
                 .message(FORBIDDEN.tip())
                 .build();
@@ -101,8 +101,8 @@ public class CommonResult implements Serializable {
      * @param resultCode 公共枚举
      * @return CommonResult
      */
-    public static CommonResult fail(ResultCode resultCode, Object data) {
-        return CommonResult.builder()
+    public static <T> CommonResult<T> fail(ResultCode resultCode, T data) {
+        return CommonResult.<T>builder()
                 .data(data)
                 .code(resultCode.code())
                 .message(resultCode.tip())

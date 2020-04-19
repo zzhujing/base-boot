@@ -6,7 +6,7 @@ spring:
         driver-class-name: com.mysql.cj.jdbc.Driver
         password: hujing19960825
         username: hujing
-        url: jdbc:mysql://localhost:3307/business_oa?characterEncoding=UTF-8&useSSL=false&serverTimeZone=Hongkong&autoReconnect=true&allowMultiQueries=true
+        url: jdbc:mysql://localhost:3307/oa?characterEncoding=UTF-8&useSSL=false&serverTimeZone=Hongkong&autoReconnect=true&allowMultiQueries=true
         type: com.zaxxer.hikari.HikariDataSource
       slaver:
         driver-class-name: com.mysql.cj.jdbc.Driver
