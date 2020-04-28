@@ -15,7 +15,7 @@ import java.util.Map;
  **/
 @Configuration
 @EnableConfigurationProperties(DynamicDataSourceProperties.class)
-@ConditionalOnProperty(prefix = "base.boot", name = "system", havingValue = "true")
+@ConditionalOnProperty(prefix = "base.boot.system", name = "open-dynamic-data-source", havingValue = "true")
 public class DatasourceConfig {
 
     private final DynamicDataSourceProperties dynamicDataSourceProperties;

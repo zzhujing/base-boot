@@ -29,3 +29,7 @@ management:
   endpoint:
     health:
       show-details: always
+base:
+  boot:
+    system:
+      open-dynamic-data-source: true
